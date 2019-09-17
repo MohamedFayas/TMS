@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory> 
+ <mapping class="com.virtusa.tmsless.model.Users"/>
+ <mapping class="com.virtusa.tmsless.model.Courses"/>
+  <mapping class="com.virtusa.tmsless.model.CourseRegistration"/>
+ </session-factory>
+</hibernate-configuration>
