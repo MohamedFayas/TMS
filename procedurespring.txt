@@ -1,0 +1,26 @@
+create table courses(
+COURSEID                                 VARCHAR2(10) primary key,
+ COURSENAME                                         VARCHAR2(20),
+ USERID                                             NUMBER,
+ STARTDATE                                          DATE,
+ ENDDATE                                            DATE,
+ VENUE                                              VARCHAR2(30),
+ TUTORNAME                                          VARCHAR2(30) ,
+ FEEDBACK                                           NUMBER(10,2) default(0),
+ COUNTPEOPLE                                        NUMBER default(0)
+);
+
+
+create or replace procedure prcUpdateFeedback
+(	
+	crseId courses.courseId%type,
+	rat courses.feedback%type
+)
+As
+begin
+update courses set feedback=(feedback*countPeople+rat)/(countPeople+1),
+countPeople=countPeople+1 where courseId=crseId;
+end;
+
+
+
